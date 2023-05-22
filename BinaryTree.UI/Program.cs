@@ -1,22 +1,28 @@
 ﻿using Binärbaum;
 
-
 namespace BinaryTree.UI
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            BinärbaumCode binärbaumCode = new();
+            Node node = new();  // Erzeugt eine Instanz der Node-Klasse, die den binären Baum repräsentiert.
 
-            int[] Zahlen = {4, 9, 24, 27, 30, 35, 39, 46, 47, 51, 64, 68, 75, 82, 90};
+            int[] numbers = { 4, 9, 24, 27, 30, 35, 39, 46, 47, 51, 64, 68, 75, 82, 90 };
+            node.CreateBinaryTree(numbers);  // Erstellt den binären Baum aus dem gegebenen Array von Zahlen.
 
-            binärbaumCode.CreateBinaryTree(Zahlen);
+            // Fügt 100 Zahlen zum binären Baum hinzu.
+            for (int i = 3; i <= 8; i++)
+            {
+                node.AddNumberToTree(i);
+            }
 
-            var result = binärbaumCode.Root;
+            Console.WriteLine(node.FindMaximumValue(node.Root));  // Gibt den maximalen Wert im binären Baum aus.
+            Console.WriteLine(node.FindMinimumValue(node.Root));  // Gibt den minimalen Wert im binären Baum aus.
 
-            Console.WriteLine(Zahlen.Max());
-            Console.WriteLine(Zahlen.Min());
+            node.Root.PrintAscending();  // Gibt die Knotenwerte des Baums in aufsteigender Reihenfolge aus.
+            Console.WriteLine();
+            node.Root.PrintDescending();  // Gibt die Knotenwerte des Baums in absteigender Reihenfolge aus.
 
             Console.ReadKey();
         }
