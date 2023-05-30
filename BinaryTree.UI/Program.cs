@@ -11,7 +11,7 @@ namespace BinaryTree.UI
             int[] numbers = { 4, 9, 24, 27, 30, 35, 39, 46, 47, 51, 64, 68, 75, 82, 90 };
             node.CreateBinaryTree(numbers);  // Erstellt den binären Baum aus dem gegebenen Array von Zahlen.
 
-            // Fügt 100 Zahlen zum binären Baum hinzu.
+            // Fügt i Zahlen zum binären Baum hinzu.
             for (int i = 3; i <= 8; i++)
             {
                 node.AddNumberToTree(i);
